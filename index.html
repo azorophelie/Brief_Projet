@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Météo</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Lien vers Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+  
+    <div id="stars"></div>
+  <div class="container">
+    <div class="weather-card">
+      <h1 id="city-name">Météo à <span id="city"></span></h1>
+      
+      <!-- Ajouter l'heure et le jour juste après le nom de la ville -->
+
+
+      <!-- Températures min et max juste sous la ville -->
+      <div class="temps-min-max">
+        <p id="temp-min">Min: </p>
+        <p id="temp-max">Max: </p>
+      </div>
+
+      <!-- Température actuelle au centre et en plus gros -->
+      <div class="current-temp">
+        <p id="temperature"></p>
+        <!-- Icône et description météo -->
+        <div id="weather-description">
+          <i id="weather-icon"></i> 
+          <span id="description"></span>
+        </div>
+      </div>
+
+      <!-- Ajouter l'icône météo à côté de la description -->
+      <div class="weather-info"> <!-- Ajouter l'élément pour la température ressentie -->
+<p><strong>Ressenti:</strong> <span id="feels-like"></span>°C</p>
+
+        <p><strong>Humidité:</strong> <span id="humidity"></span>%</p>
+        <p><strong>Vitesse du vent:</strong> <span id="wind"></span> km/h</p>
+      </div>
+      <p id="current-date"></p>
+<p id="current-time"></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="meteo.js"></script>
+</body>
+</html>

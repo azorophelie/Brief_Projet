@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(19, 18, 18);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+ .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+ /* Carte Météo*/
+ .weather-card {
+  text-align: center;
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(30, 30, 40, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+  width: 600px;
+  backdrop-filter: blur(12px);
+  margin: 20px;
+  transition: transform 0.3s ease-in-out, background 0.5s, box-shadow 0.5s;
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+}
+
+/* carte pour le jour */
+.weather-card.daytime {
+  background: rgba(158, 224, 255, 0.8);
+  box-shadow: 0 8px 40px rgba(255, 255, 255, 0.6); 
+  border: 1px solid rgba(255, 255, 255, 0.4); 
+  color: #333; 
+}
+
+.weather-card.daytime #city-name {
+  color: #2e389c; 
+  font-size: 30px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7); 
+}
+
+.weather-card.daytime .temps-min-max {
+  font-size: 18px;
+  color: #1a237e;;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.weather-card.daytime #temp-min, #temp-max {
+  margin: 0 10px; 
+}
+
+.weather-card.daytime .current-temp p {
+  font-size: 55px;
+  font-weight: bold;
+  color: #046baf;
+  margin-top: 40px;
+}
+
+.weather-card.daytime #weather-description {
+  font-size: 20px;
+  margin-top: 0;
+  color: #1a237e;
+  margin-bottom: 50px;
+}
+
+.weather-card.daytime .weather-info p {
+  color: #1a237e; 
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.weather-card.daytime #current-date,
+.weather-card.daytime #current-time {
+  color: black;
+}
+
+/* Carte pour la nuit */
+.weather-card.nighttime #city-name {
+  font-size: 30px;
+  font-weight: bold;
+  color: #e0e0e0;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.weather-card.nighttime .temps-min-max {
+  font-size: 17px;
+  color: #81d4fa;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.weather-card.nighttime #temp-min, #temp-max {
+  margin: 0 10px; 
+}
+
+.weather-card.nighttime .current-temp p {
+  font-size: 55px;
+  font-weight: bold;
+  color: #FFD700;
+  margin-top: 40px
+}
+
+.weather-card.nighttime #weather-description {
+  font-size: 20px;
+  margin-top: 0;
+  color: #cfcfcf;
+  margin-bottom: 50px;
+}
+
+.weather-card.nighttime .weather-info p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #cfcfcf;
+}
+.weather-card.nighttime #current-time,
+.weather-card.nighttime #current-date {
+  color: grey;
+}
+
+.weather-info {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+#weather-icon {
+  font-size: 25px;
+}
+
+#current-date, #current-time {
+  display: inline-block; 
+  margin-right: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+
+/* Animation de fond Etoiles pour la nuit */
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); 
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.8;
+  filter: blur(1px);
+  animation: twinkle 2s infinite alternate ease-in-out;
+}
+
+/* Animation de scintillement */
+@keyframes twinkle {
+  0% { opacity: 0.5; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.3; transform: scale(0.85); }
+}
+
+/* Animation de mouvement des étoiles */
+@keyframes drift {
+  from { transform: translateY(0px); }
+  to { transform: translateY(20px); } 
+}
+
+/* Animation de fond Nuages pour le jour */
+
+.cloud {
+  position: absolute;
+  background: radial-gradient(ellipse at center, white 60%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 50%;
+  opacity: 0.9;
+  filter: blur(12px); /* Effet flou pour un rendu plus doux */
+  animation: float 40s linear infinite;
+  pointer-events: none; /* Pas d'interaction avec la souris */
+}
+
+/* Animation des nuages : mouvement de gauche à droite */
+@keyframes float {
+  from {
+    transform: translateX(-200px); /* Départ en dehors de l'écran à gauche */
+  }
+  to {
+    transform: translateX(100vw); /* Traverse l'écran vers la droite */
+  }
+}
+
+/* Conteneur des nuages */
+#clouds {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Derrière le contenu principal */
+  background: linear-gradient(to bottom, #1f9cce, #d0e7f9); /* Ciel bleu clair */
+}
