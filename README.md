@@ -5,6 +5,8 @@ la vitesse du vent, et une icôn météo correspondante à la description (pluie
 L'application ajuste également son interface en fonction du jour et de la nuitn en changeant les styles et en générant des 
 effets visuels.
 
+[Lien vers l'application météo](https://brief-weatherapp.netlify.app/)
+
 ## Fonctionnalités
 - Affichage de la météo actuelle, ainsi que les températures minimales et maximales.
 - Affichage de la météo ressentie, de l'humidité et de la vitesse du vent.
@@ -55,3 +57,12 @@ git clone git@github.com:azorophelie/Brief_Projet.git
 - meteo.js : Le fichier JavaScript qui va gérer les différents éléments de l'app avec l'API
 - script.js : Le fichier sera pour l'arrière plan animé.
 - conf.json : Un fichier qui va contenir les infos de la ville principale qui contient une clé API.
+
+## Preview 
+
+
+![Previewday](https://github.com/user-attachments/assets/116970cd-a1bd-4302-8959-64f5a3cbf05d)
+
+
+![previewnight](https://github.com/user-attachments/assets/8e29040d-6155-48c8-8d30-3170a65fee74)
+
