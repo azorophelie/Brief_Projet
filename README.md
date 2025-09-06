@@ -1,5 +1,5 @@
 # Mon application météo
-Una application qui affiche les conditions métérologiques actuelles en utilisant l'API OpenWeatherMap.
+Une application qui affiche les conditions métérologiques actuelles en utilisant l'API OpenWeatherMap.
 L'application récupére la météo d'une ville donnée, affiche les températures actuelles, minimales, maximales, l'humidité, 
 la vitesse du vent, et une icôn météo correspondante à la description (pluie, soleil, neige, etc.). 
 L'application ajuste également son interface en fonction du jour et de la nuitn en changeant les styles et en générant des 
